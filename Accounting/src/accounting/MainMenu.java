@@ -45,11 +45,12 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(181, 241, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btn_DataProduk.setBackground(new java.awt.Color(141, 203, 230));
         btn_DataProduk.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_DataProduk.setIcon(new javax.swing.ImageIcon("D:\\GITHUB\\Project_Accounting\\ASSET\\BoxFix.png")); // NOI18N
         btn_DataProduk.setText("DATA PRODUK");
         btn_DataProduk.setToolTipText("");
-        btn_DataProduk.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_DataProduk.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_DataProduk.setBorderPainted(false);
         btn_DataProduk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_DataProduk.setIconTextGap(10);
@@ -60,19 +61,37 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(60, 132, 171));
         jButton2.setText("Sales");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setBorderPainted(false);
 
+        jButton3.setBackground(new java.awt.Color(48, 227, 223));
         jButton3.setText("Pajak");
+        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setBorderPainted(false);
 
+        jButton4.setBackground(new java.awt.Color(160, 132, 220));
         jButton4.setText("ORDER");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setBorderPainted(false);
 
+        jButton5.setBackground(new java.awt.Color(254, 200, 104));
         jButton5.setText("DATA CLIENT");
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.setBorderPainted(false);
 
+        jButton6.setBackground(new java.awt.Color(249, 74, 41));
         jButton6.setText("DATA VENDOR");
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton6.setBorderPainted(false);
 
+        jButton8.setBackground(new java.awt.Color(255, 234, 32));
         jButton8.setText("Gudang");
+        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton8.setBorderPainted(false);
 
-        jPanel1.setBackground(new java.awt.Color(252, 194, 252));
+        jPanel1.setBackground(new java.awt.Color(147, 191, 207));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
