@@ -46,7 +46,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btn_DataProduk.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_DataProduk.setIcon(new javax.swing.ImageIcon("D:\\GITHUB\\Project_Accounting\\ASSET\\BoxFix.png")); // NOI18N
+        btn_DataProduk.setIcon(new javax.swing.ImageIcon("C:\\Users\\klemu\\OneDrive\\Documents\\GitHub\\Project_Accounting\\ASSET\\BoxFix.png")); // NOI18N
         btn_DataProduk.setText("DATA PRODUK");
         btn_DataProduk.setToolTipText("");
         btn_DataProduk.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -128,7 +128,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(52, 52, 52))
+                .addGap(55, 55, 55))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
