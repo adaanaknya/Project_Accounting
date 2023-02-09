@@ -48,7 +48,7 @@ public class MainMenu extends javax.swing.JFrame {
         btn_DataProduk.setBackground(new java.awt.Color(141, 203, 230));
         btn_DataProduk.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_DataProduk.setIcon(new javax.swing.ImageIcon("D:\\GITHUB\\Project_Accounting\\ASSET\\BoxFix.png")); // NOI18N
-        btn_DataProduk.setText("DATA PRODUK");
+        btn_DataProduk.setText("DATA GUDANG");
         btn_DataProduk.setToolTipText("");
         btn_DataProduk.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_DataProduk.setBorderPainted(false);
