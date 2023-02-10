@@ -52,11 +52,10 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         TxtPresentase_pajak = new javax.swing.JTextField();
         tblhapus = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TabelPajak = new javax.swing.JTable();
         TxtId_pajak = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TabelPajak = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(242, 242, 242));
@@ -143,17 +142,17 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(191, 191, 191))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addGap(16, 16, 16))
         );
 
         tblsimpan.setText("Simpan");
@@ -187,6 +186,15 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
             }
         });
 
+        TxtId_pajak.setEditable(false);
+        TxtId_pajak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtId_pajakActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("%");
+
         TabelPajak.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -213,17 +221,6 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TabelPajak);
 
-        jScrollPane2.setViewportView(jScrollPane1);
-
-        TxtId_pajak.setEditable(false);
-        TxtId_pajak.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtId_pajakActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText("%");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -231,7 +228,7 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -249,10 +246,10 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
                             .addComponent(tblubah)
                             .addComponent(tblsimpan)
                             .addComponent(tblhapus))))
-                .addGap(45, 45, 45))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 89, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,12 +272,12 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
                         .addComponent(tblhapus)
                         .addGap(18, 18, 18)
                         .addComponent(tblubah)))
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 750, 620));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 560, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -417,7 +414,6 @@ public void tampil(){
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton tblhapus;
     private javax.swing.JButton tblsimpan;
     private javax.swing.JButton tblubah;

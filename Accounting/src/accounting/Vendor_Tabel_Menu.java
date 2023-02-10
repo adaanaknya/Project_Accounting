@@ -59,14 +59,13 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
         TxtNo_telp = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         TxtId_vendor = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabelvendor = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(242, 242, 242));
-        setMinimumSize(new java.awt.Dimension(900, 650));
-        setPreferredSize(new java.awt.Dimension(900, 650));
+        setMinimumSize(new java.awt.Dimension(850, 650));
+        setPreferredSize(new java.awt.Dimension(850, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -149,16 +148,16 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(220, 220, 220)
+                .addGap(197, 197, 197)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(220, 220, 220))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                .addGap(28, 28, 28))
+                .addGap(24, 24, 24))
         );
 
         tblsimpan.setText("Simpan");
@@ -243,19 +242,13 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tabelvendor);
 
-        jScrollPane2.setViewportView(jScrollPane1);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -265,20 +258,23 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(TxtAlamat, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TxtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(TxtNama_vendor, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtNo_telp, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(141, 141, 141)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tblsimpan)
-                                    .addComponent(tblhapus)
-                                    .addComponent(tblubah)))
-                            .addComponent(TxtId_vendor, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(54, 54, 54))
+                            .addComponent(TxtAlamat)
+                            .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtNama_vendor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtNo_telp, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtId_vendor, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(583, 583, 583)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tblsimpan)
+                            .addComponent(tblhapus)
+                            .addComponent(tblubah)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,8 +308,8 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
                         .addComponent(tblhapus)
                         .addGap(18, 18, 18)
                         .addComponent(tblubah)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
 
@@ -369,20 +365,20 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNo_telpActionPerformed
 
+    private void TxtId_vendorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtId_vendorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtId_vendorActionPerformed
+
     private void TabelvendorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelvendorMouseClicked
         DefaultTableModel model = (DefaultTableModel)Tabelvendor.getModel();
         int selectedRowIndex = Tabelvendor.getSelectedRow();
-        
+
         TxtId_vendor.setText(model.getValueAt (selectedRowIndex, 0).toString());
         TxtNama_vendor.setText(model.getValueAt (selectedRowIndex, 1).toString());
         TxtNo_telp.setText(model.getValueAt (selectedRowIndex, 2).toString());
         TxtEmail.setText(model.getValueAt (selectedRowIndex, 3).toString());
         TxtAlamat.setText(model.getValueAt (selectedRowIndex, 4).toString());
     }//GEN-LAST:event_TabelvendorMouseClicked
-
-    private void TxtId_vendorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtId_vendorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtId_vendorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -474,7 +470,6 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton tblhapus;
     private javax.swing.JButton tblsimpan;
     private javax.swing.JButton tblubah;
