@@ -60,7 +60,8 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(242, 242, 242));
-        setMinimumSize(new java.awt.Dimension(850, 550));
+        setMinimumSize(new java.awt.Dimension(850, 545));
+        setPreferredSize(new java.awt.Dimension(850, 545));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
