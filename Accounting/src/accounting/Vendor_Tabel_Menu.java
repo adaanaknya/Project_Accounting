@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import accounting.Accounting;
+import java.awt.Color;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -137,6 +138,8 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 180, 650));
 
+        jPanel2.setBackground(java.awt.Color.lightGray);
+
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -160,14 +163,59 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
+        tblsimpan.setBackground(new java.awt.Color(51, 204, 51));
+        tblsimpan.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblsimpan.setForeground(new java.awt.Color(255, 255, 255));
         tblsimpan.setText("Simpan");
+        tblsimpan.setBorder(null);
+        tblsimpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblsimpan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tblsimpan.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblsimpan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblsimpanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblsimpanMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblsimpanMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblsimpanMouseReleased(evt);
+            }
+        });
         tblsimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblsimpanActionPerformed(evt);
             }
         });
 
+        tblhapus.setBackground(new java.awt.Color(255, 0, 0));
+        tblhapus.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblhapus.setForeground(new java.awt.Color(255, 255, 255));
         tblhapus.setText("Hapus");
+        tblhapus.setBorder(null);
+        tblhapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblhapus.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblhapus.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblhapus.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblhapus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblhapusMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblhapusMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblhapusMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblhapusMouseReleased(evt);
+            }
+        });
         tblhapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblhapusActionPerformed(evt);
@@ -188,7 +236,29 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
             }
         });
 
+        tblubah.setBackground(new java.awt.Color(255, 255, 0));
+        tblubah.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblubah.setForeground(new java.awt.Color(255, 255, 255));
         tblubah.setText("Ubah");
+        tblubah.setBorder(null);
+        tblubah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblubah.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblubah.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblubah.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblubah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblubahMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblubahMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblubahMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblubahMouseReleased(evt);
+            }
+        });
         tblubah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblubahActionPerformed(evt);
@@ -263,15 +333,15 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
                             .addComponent(TxtNama_vendor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtNo_telp, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtId_vendor, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(583, 583, 583)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tblsimpan)
-                            .addComponent(tblhapus)
-                            .addComponent(tblubah)))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tblhapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tblubah, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(113, 113, 113))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -284,36 +354,35 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(TxtId_vendor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
+                        .addGap(14, 14, 14)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(TxtNama_vendor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(TxtNo_telp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(TxtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtNo_telp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(2, 2, 2)
-                        .addComponent(tblsimpan)
+                        .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(tblhapus)
+                        .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(tblubah)))
+                        .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(TxtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 720, 650));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 670, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -379,6 +448,66 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
         TxtEmail.setText(model.getValueAt (selectedRowIndex, 3).toString());
         TxtAlamat.setText(model.getValueAt (selectedRowIndex, 4).toString());
     }//GEN-LAST:event_TabelvendorMouseClicked
+
+    private void tblhapusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMouseEntered
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color(153, 31, 0));
+    }//GEN-LAST:event_tblhapusMouseEntered
+
+    private void tblhapusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMouseExited
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color (255, 0, 0));
+    }//GEN-LAST:event_tblhapusMouseExited
+
+    private void tblhapusMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMousePressed
+        // TODO add your handling code here:36, 143, 36
+        tblhapus.setBackground(new Color (153, 0, 0));
+    }//GEN-LAST:event_tblhapusMousePressed
+
+    private void tblhapusMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMouseReleased
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color (255, 0, 0));
+    }//GEN-LAST:event_tblhapusMouseReleased
+
+    private void tblsimpanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseEntered
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color(0,153,0));
+    }//GEN-LAST:event_tblsimpanMouseEntered
+
+    private void tblsimpanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseExited
+        // TODO add your handling code here:51, 204, 51
+        tblsimpan.setBackground(new Color(51, 204, 51));
+    }//GEN-LAST:event_tblsimpanMouseExited
+
+    private void tblsimpanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMousePressed
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color( 36, 143, 36));
+    }//GEN-LAST:event_tblsimpanMousePressed
+
+    private void tblsimpanMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseReleased
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color( 51, 204, 51));
+    }//GEN-LAST:event_tblsimpanMouseReleased
+
+    private void tblubahMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMouseEntered
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 230, 184, 0));
+    }//GEN-LAST:event_tblubahMouseEntered
+
+    private void tblubahMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMouseExited
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 255, 255, 0));
+    }//GEN-LAST:event_tblubahMouseExited
+
+    private void tblubahMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMousePressed
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 255, 204, 0));
+    }//GEN-LAST:event_tblubahMousePressed
+
+    private void tblubahMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMouseReleased
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 255, 255, 0));
+    }//GEN-LAST:event_tblubahMouseReleased
 
     /**
      * @param args the command line arguments
