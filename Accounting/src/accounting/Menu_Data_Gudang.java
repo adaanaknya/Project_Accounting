@@ -84,7 +84,6 @@ public class Menu_Data_Gudang extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 102, 102));
         jButton2.setText("Tabel Gudang");
-        jButton2.setActionCommand("Tabel Gudang");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.setBorderPainted(false);
         jButton2.setMaximumSize(new java.awt.Dimension(30, 30));
