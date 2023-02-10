@@ -307,7 +307,18 @@ public class Pajak_Tabel_Pajak extends javax.swing.JFrame {
     }//GEN-LAST:event_tblsimpanActionPerformed
 
     private void tblhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblhapusActionPerformed
-        // TODO add your handling code here:
+        try{
+            String value1= TxtId_pajak.getText();
+            
+            String delete= "Delete from Pajak where Id_pajak='"+value1+"'";
+              pst= con.prepareStatement(delete);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil dihapus!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal dihapus" +e.getMessage());
+          }
+          tampil();               
     }//GEN-LAST:event_tblhapusActionPerformed
 
     private void TxtPresentase_pajakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPresentase_pajakActionPerformed
