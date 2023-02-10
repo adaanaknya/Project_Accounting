@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import accounting.Accounting;
+import java.awt.Color;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -167,6 +168,20 @@ public class Client_Tabel_client extends javax.swing.JFrame {
         tblsimpan.setMaximumSize(new java.awt.Dimension(84, 25));
         tblsimpan.setMinimumSize(new java.awt.Dimension(84, 25));
         tblsimpan.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblsimpan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblsimpanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblsimpanMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblsimpanMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblsimpanMouseReleased(evt);
+            }
+        });
         tblsimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblsimpanActionPerformed(evt);
@@ -181,6 +196,20 @@ public class Client_Tabel_client extends javax.swing.JFrame {
         tblhapus.setMaximumSize(new java.awt.Dimension(84, 25));
         tblhapus.setMinimumSize(new java.awt.Dimension(84, 25));
         tblhapus.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblhapus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblhapusMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblhapusMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblhapusMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblhapusMouseReleased(evt);
+            }
+        });
         tblhapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblhapusActionPerformed(evt);
@@ -216,6 +245,20 @@ public class Client_Tabel_client extends javax.swing.JFrame {
         tblubah.setMaximumSize(new java.awt.Dimension(84, 25));
         tblubah.setMinimumSize(new java.awt.Dimension(84, 25));
         tblubah.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblubah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblubahMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblubahMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblubahMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblubahMouseReleased(evt);
+            }
+        });
         tblubah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblubahActionPerformed(evt);
@@ -331,6 +374,66 @@ public class Client_Tabel_client extends javax.swing.JFrame {
     private void tblubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblubahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tblubahActionPerformed
+
+    private void tblsimpanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMousePressed
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color( 36, 143, 36));
+    }//GEN-LAST:event_tblsimpanMousePressed
+
+    private void tblsimpanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseEntered
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color(0,153,0));
+    }//GEN-LAST:event_tblsimpanMouseEntered
+
+    private void tblsimpanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseExited
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color(51, 204, 51));
+    }//GEN-LAST:event_tblsimpanMouseExited
+
+    private void tblsimpanMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseReleased
+        // TODO add your handling code here:
+        tblsimpan.setBackground(new Color( 51, 204, 51));
+    }//GEN-LAST:event_tblsimpanMouseReleased
+
+    private void tblhapusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMouseEntered
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color(103,0,0));
+    }//GEN-LAST:event_tblhapusMouseEntered
+
+    private void tblhapusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMouseExited
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color (255, 0, 0));
+    }//GEN-LAST:event_tblhapusMouseExited
+
+    private void tblhapusMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMousePressed
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color (153, 0, 0));
+    }//GEN-LAST:event_tblhapusMousePressed
+
+    private void tblhapusMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblhapusMouseReleased
+        // TODO add your handling code here:
+        tblhapus.setBackground(new Color (255, 0, 0));
+    }//GEN-LAST:event_tblhapusMouseReleased
+
+    private void tblubahMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMouseEntered
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 230, 184, 0));
+    }//GEN-LAST:event_tblubahMouseEntered
+
+    private void tblubahMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMouseExited
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 255, 255, 0));
+    }//GEN-LAST:event_tblubahMouseExited
+
+    private void tblubahMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMousePressed
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 255, 204, 0));
+    }//GEN-LAST:event_tblubahMousePressed
+
+    private void tblubahMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblubahMouseReleased
+        // TODO add your handling code here:
+        tblubah.setBackground(new Color( 255, 255, 0));
+    }//GEN-LAST:event_tblubahMouseReleased
 
     /**
      * @param args the command line arguments
