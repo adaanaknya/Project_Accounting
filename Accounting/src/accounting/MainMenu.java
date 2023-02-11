@@ -46,7 +46,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btn_DataProduk.setBackground(new java.awt.Color(141, 203, 230));
-        btn_DataProduk.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_DataProduk.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         btn_DataProduk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/accounting/ASSET/BoxFix.png"))); // NOI18N
         btn_DataProduk.setText("DATA GUDANG");
         btn_DataProduk.setToolTipText("");
@@ -62,31 +62,37 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(60, 132, 171));
+        jButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton2.setText("Sales");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.setBorderPainted(false);
 
         jButton3.setBackground(new java.awt.Color(48, 227, 223));
+        jButton3.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton3.setText("Pajak");
         jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.setBorderPainted(false);
 
         jButton4.setBackground(new java.awt.Color(160, 132, 220));
+        jButton4.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton4.setText("ORDER");
         jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.setBorderPainted(false);
 
         jButton5.setBackground(new java.awt.Color(254, 200, 104));
+        jButton5.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton5.setText("DATA CLIENT");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.setBorderPainted(false);
 
         jButton6.setBackground(new java.awt.Color(249, 74, 41));
+        jButton6.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton6.setText("DATA VENDOR");
         jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.setBorderPainted(false);
 
         jButton8.setBackground(new java.awt.Color(255, 234, 32));
+        jButton8.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton8.setText("Gudang");
         jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton8.setBorderPainted(false);
@@ -94,11 +100,11 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(147, 191, 207));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Accounting Application");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("By WoW");
         jLabel2.setToolTipText("");

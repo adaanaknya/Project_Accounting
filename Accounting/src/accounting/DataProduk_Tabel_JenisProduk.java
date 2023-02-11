@@ -56,6 +56,8 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         tblhapus = new javax.swing.JButton();
         tblubah = new javax.swing.JButton();
         TxtId_jenisproduk = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(242, 242, 242));
@@ -64,22 +66,22 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         jButton1.setBackground(new java.awt.Color(0, 51, 102));
-        jButton1.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Data Rekening");
 
         jButton2.setBackground(new java.awt.Color(0, 51, 102));
-        jButton2.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Cetak Invoice");
 
         jButton3.setBackground(new java.awt.Color(0, 51, 102));
-        jButton3.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Data Gudang");
 
         jButton4.setBackground(new java.awt.Color(0, 51, 102));
-        jButton4.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Data Nama");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +91,7 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         });
 
         jButton5.setBackground(new java.awt.Color(0, 51, 102));
-        jButton5.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Home");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +136,7 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Tabel Jenis Produk");
 
@@ -143,20 +145,20 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGap(104, 104, 104)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                .addGap(16, 16, 16))
         );
 
-        tblsimpan.setBackground(new java.awt.Color(255, 0, 0));
-        tblsimpan.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblsimpan.setBackground(new java.awt.Color(84, 180, 53));
+        tblsimpan.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         tblsimpan.setForeground(new java.awt.Color(255, 255, 255));
         tblsimpan.setText("Simpan");
         tblsimpan.setBorder(null);
@@ -195,12 +197,16 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TabelJenisproduk);
 
-        jLabel9.setText("Jenis Produk        :");
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jLabel9.setText("Jenis Produk        ");
 
-        jLabel8.setText("ID Jenis Produk   :");
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jLabel8.setText("ID Jenis Produk   ");
 
-        tblhapus.setBackground(new java.awt.Color(51, 204, 51));
-        tblhapus.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        TxtJenis_produk.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+
+        tblhapus.setBackground(new java.awt.Color(255, 30, 30));
+        tblhapus.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         tblhapus.setForeground(new java.awt.Color(255, 255, 255));
         tblhapus.setText("Hapus");
         tblhapus.setBorder(null);
@@ -213,8 +219,8 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
             }
         });
 
-        tblubah.setBackground(new java.awt.Color(255, 255, 0));
-        tblubah.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblubah.setBackground(new java.awt.Color(15, 98, 146));
+        tblubah.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         tblubah.setForeground(new java.awt.Color(255, 255, 255));
         tblubah.setText("Ubah");
         tblubah.setBorder(null);
@@ -227,63 +233,80 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
             }
         });
 
+        TxtId_jenisproduk.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        TxtId_jenisproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtId_jenisprodukActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText(":");
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText(":");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel9))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(TxtJenis_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel8)
-                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(TxtId_jenisproduk, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(50, 50, 50)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                                .addComponent(tblhapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(18, 33, Short.MAX_VALUE)
+                                .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 24, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel12)
                                 .addComponent(TxtId_jenisproduk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
+                            .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(TxtJenis_produk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))))
                 .addGap(18, 18, 18)
-                .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 540, 540));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 550, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -338,6 +361,10 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         TxtId_jenisproduk.setText(model.getValueAt (selectedRowIndex, 0).toString());
         TxtJenis_produk.setText(model.getValueAt (selectedRowIndex, 1).toString());
     }//GEN-LAST:event_TabelJenisprodukMouseClicked
+
+    private void TxtId_jenisprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtId_jenisprodukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtId_jenisprodukActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,6 +581,8 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
