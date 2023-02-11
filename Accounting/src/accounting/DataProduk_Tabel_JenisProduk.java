@@ -4,17 +4,28 @@
  */
 package accounting;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import accounting.Accounting;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author klemu
  */
 public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
-
+    Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
     /**
      * Creates new form MainMenu
      */
     public DataProduk_Tabel_JenisProduk() {
         initComponents();
+        con = Accounting.connectDB();
+        tampil();
     }
 
     /**
@@ -36,15 +47,15 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        tblsimpan = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelJenisproduk = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        TxtJenis_produk = new javax.swing.JTextField();
+        tblhapus = new javax.swing.JButton();
+        tblubah = new javax.swing.JButton();
+        TxtId_jenisproduk = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(242, 242, 242));
@@ -144,16 +155,21 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 0));
-        jButton8.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Simpan");
-        jButton8.setBorder(null);
-        jButton8.setMaximumSize(new java.awt.Dimension(84, 25));
-        jButton8.setMinimumSize(new java.awt.Dimension(84, 25));
-        jButton8.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setBackground(new java.awt.Color(255, 0, 0));
+        tblsimpan.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblsimpan.setForeground(new java.awt.Color(255, 255, 255));
+        tblsimpan.setText("Simpan");
+        tblsimpan.setBorder(null);
+        tblsimpan.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblsimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblsimpanActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelJenisproduk.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -172,33 +188,44 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        TabelJenisproduk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelJenisprodukMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TabelJenisproduk);
 
         jLabel9.setText("Jenis Produk        :");
 
-        jLabel8.setText("ID Produk            :");
+        jLabel8.setText("ID Jenis Produk   :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        tblhapus.setBackground(new java.awt.Color(51, 204, 51));
+        tblhapus.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblhapus.setForeground(new java.awt.Color(255, 255, 255));
+        tblhapus.setText("Hapus");
+        tblhapus.setBorder(null);
+        tblhapus.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblhapus.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblhapus.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblhapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblhapusActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("jTextField1");
-
-        jButton9.setBackground(new java.awt.Color(51, 204, 51));
-        jButton9.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Hapus");
-        jButton9.setBorder(null);
-        jButton9.setMaximumSize(new java.awt.Dimension(84, 25));
-        jButton9.setMinimumSize(new java.awt.Dimension(84, 25));
-        jButton9.setPreferredSize(new java.awt.Dimension(84, 25));
-
-        jButton10.setBackground(new java.awt.Color(255, 255, 0));
-        jButton10.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Ubah");
-        jButton10.setBorder(null);
-        jButton10.setMaximumSize(new java.awt.Dimension(84, 25));
-        jButton10.setMinimumSize(new java.awt.Dimension(84, 25));
-        jButton10.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblubah.setBackground(new java.awt.Color(255, 255, 0));
+        tblubah.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblubah.setForeground(new java.awt.Color(255, 255, 255));
+        tblubah.setText("Ubah");
+        tblubah.setBorder(null);
+        tblubah.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblubah.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblubah.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblubah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblubahActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -206,27 +233,27 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel9)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TxtJenis_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel8)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(TxtId_jenisproduk, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(50, 50, 50)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                .addComponent(tblhapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(18, 33, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -239,17 +266,18 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TxtId_jenisproduk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TxtJenis_produk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
@@ -267,6 +295,49 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void tblsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblsimpanActionPerformed
+        simpan();
+    }//GEN-LAST:event_tblsimpanActionPerformed
+
+    private void tblubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblubahActionPerformed
+         try{
+              String value1= TxtId_jenisproduk.getText();
+              String value2= TxtJenis_produk.getText();
+              
+              String update= "update JenisProduk set Id_jnsproduk='"+value1+"', Jenis_produk='"+value2+"' where Id_jnsproduk='"+value1+"'";
+              pst= con.prepareStatement(update);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil Update!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal diedit" +e.getMessage());
+          }
+          tampil();
+    }//GEN-LAST:event_tblubahActionPerformed
+
+    private void tblhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblhapusActionPerformed
+        try{
+            String value1= TxtId_jenisproduk.getText();
+            
+            String delete= "Delete from JenisProduk where Id_jnsproduk='"+value1+"'";
+              pst= con.prepareStatement(delete);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil dihapus!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal dihapus" +e.getMessage());
+          }
+          tampil();  
+    }//GEN-LAST:event_tblhapusActionPerformed
+
+    private void TabelJenisprodukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelJenisprodukMouseClicked
+        DefaultTableModel model = (DefaultTableModel)TabelJenisproduk.getModel();
+        int selectedRowIndex = TabelJenisproduk.getSelectedRow();
+        
+        TxtId_jenisproduk.setText(model.getValueAt (selectedRowIndex, 0).toString());
+        TxtJenis_produk.setText(model.getValueAt (selectedRowIndex, 1).toString());
+    }//GEN-LAST:event_TabelJenisprodukMouseClicked
 
     /**
      * @param args the command line arguments
@@ -430,16 +501,58 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
         });
     }
 
+    public void tampil(){
+
+     DefaultTableModel tb = new DefaultTableModel();
+
+        tb.addColumn("Id");
+        tb.addColumn("Jenis Produk");
+        TabelJenisproduk.setModel(tb);
+
+
+        try{
+            String insert = ("Select * from JenisProduk");
+            pst = con.prepareStatement(insert);
+            rs = pst.executeQuery();
+
+            while(rs.next()){
+                tb.addRow(new Object[]{
+                rs.getString("Id_jnsproduk"),
+                rs.getString("Jenis_produk"),
+                
+
+                });
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+        }
+    }
+
+    public void simpan(){
+        try{
+           String insert = "INSERT INTO JenisProduk (Jenis_produk) VALUES (?)";
+           
+           pst = con.prepareStatement(insert);
+           
+           pst.setString(1, TxtJenis_produk.getText());
+           pst.execute();
+           
+           JOptionPane.showMessageDialog(null, "Berhasil Simpan!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+           
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        tampil();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelJenisproduk;
+    private javax.swing.JTextField TxtId_jenisproduk;
+    private javax.swing.JTextField TxtJenis_produk;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
@@ -448,7 +561,8 @@ public class DataProduk_Tabel_JenisProduk extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton tblhapus;
+    private javax.swing.JButton tblsimpan;
+    private javax.swing.JButton tblubah;
     // End of variables declaration//GEN-END:variables
 }

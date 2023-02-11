@@ -396,7 +396,18 @@ public class Vendor_Tabel_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void tblhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblhapusActionPerformed
-        // TODO add your handling code here:
+        try{
+            String value1= TxtId_vendor.getText();
+            
+            String delete= "Delete from Vendor where Id_vendor='"+value1+"'";
+              pst= con.prepareStatement(delete);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil dihapus!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal dihapus" +e.getMessage());
+          }
+          tampil(); 
     }//GEN-LAST:event_tblhapusActionPerformed
 
     private void tblsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblsimpanActionPerformed
