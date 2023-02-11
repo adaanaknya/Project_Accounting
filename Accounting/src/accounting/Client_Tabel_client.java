@@ -25,7 +25,7 @@ public class Client_Tabel_client extends javax.swing.JFrame {
     public Client_Tabel_client() {
         initComponents();
         con = Accounting.connectDB();
-        
+        tampil();
     }
 
     /**
@@ -49,18 +49,18 @@ public class Client_Tabel_client extends javax.swing.JFrame {
         tblsimpan = new javax.swing.JButton();
         tblhapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelClient = new javax.swing.JTable();
         tblubah = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TxtId_client = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        TxtNama_client = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        TxtAlamat = new javax.swing.JTextField();
+        TxtEmail = new javax.swing.JTextField();
+        TxtNo_telepon = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(242, 242, 242));
@@ -187,7 +187,7 @@ public class Client_Tabel_client extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelClient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -206,7 +206,12 @@ public class Client_Tabel_client extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        TabelClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelClientMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TabelClient);
 
         tblubah.setBackground(new java.awt.Color(255, 255, 0));
         tblubah.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
@@ -256,12 +261,12 @@ public class Client_Tabel_client extends javax.swing.JFrame {
                                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(24, 24, 24)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtId_client, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(TxtAlamat, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(TxtNama_client, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TxtNo_telepon, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
@@ -279,23 +284,23 @@ public class Client_Tabel_client extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TxtId_client, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(TxtNama_client, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(15, 15, 15)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtNo_telepon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -321,16 +326,53 @@ public class Client_Tabel_client extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void tblhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblhapusActionPerformed
-        // TODO add your handling code here:
+        try{
+            String value1= TxtId_client.getText();
+            
+            String delete= "Delete from Client where Id_client='"+value1+"'";
+              pst= con.prepareStatement(delete);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil dihapus!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal dihapus" +e.getMessage());
+          }
+          tampil(); 
     }//GEN-LAST:event_tblhapusActionPerformed
 
     private void tblsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblsimpanActionPerformed
-        // TODO add your handling code here:
+        simpan();
     }//GEN-LAST:event_tblsimpanActionPerformed
 
     private void tblubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblubahActionPerformed
-        // TODO add your handling code here:
+        try{
+              String value1= TxtId_client.getText();
+              String value2= TxtNama_client.getText();
+              String value3= TxtNo_telepon.getText();
+              String value4= TxtEmail.getText();
+              String value5= TxtAlamat.getText();
+              
+              String update= "update Client set Id_client='"+value1+"', Nama_client='"+value2+"',No_Telepon='"+value3+"',Email='"+value4+"',Alamat='"+value5+"' where Id_client='"+value1+"'";
+              pst= con.prepareStatement(update);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil Update!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal diedit" +e.getMessage());
+          }
+          tampil();
     }//GEN-LAST:event_tblubahActionPerformed
+
+    private void TabelClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelClientMouseClicked
+        DefaultTableModel model = (DefaultTableModel)TabelClient.getModel();
+        int selectedRowIndex = TabelClient.getSelectedRow();
+
+        TxtId_client.setText(model.getValueAt (selectedRowIndex, 0).toString());
+        TxtNama_client.setText(model.getValueAt (selectedRowIndex, 1).toString());
+        TxtNo_telepon.setText(model.getValueAt (selectedRowIndex, 2).toString());
+        TxtEmail.setText(model.getValueAt (selectedRowIndex, 3).toString());
+        TxtAlamat.setText(model.getValueAt (selectedRowIndex, 4).toString());
+    }//GEN-LAST:event_TabelClientMouseClicked
 
     /**
      * @param args the command line arguments
@@ -367,8 +409,64 @@ public class Client_Tabel_client extends javax.swing.JFrame {
             }
         });
     }
+public void tampil(){
 
+     DefaultTableModel tb = new DefaultTableModel();
+
+        tb.addColumn("Id");
+        tb.addColumn("Nama Client");
+        tb.addColumn("No Telepon");
+        tb.addColumn("Email");
+        tb.addColumn("Alamat");
+        TabelClient.setModel(tb);
+
+
+        try{
+            String insert = ("Select * from Client");
+            pst = con.prepareStatement(insert);
+            rs = pst.executeQuery();
+
+            while(rs.next()){
+                tb.addRow(new Object[]{
+                rs.getString("Id_client"),
+                rs.getString("Nama_client"),
+                rs.getString("No_Telepon"),
+                rs.getString("Email"),
+                rs.getString("Alamat")
+
+                });
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+        }
+    }
+
+    public void simpan(){
+        try{
+           String insert = "INSERT INTO Client (Nama_client,No_Telepon,Email,Alamat) VALUES (?,?,?,?)";
+           
+           pst = con.prepareStatement(insert);
+           
+           pst.setString(1, TxtNama_client.getText());
+           pst.setString(2, TxtNo_telepon.getText());
+           pst.setString(3, TxtEmail.getText());
+           pst.setString(4, TxtAlamat.getText());
+           pst.execute();
+           
+           JOptionPane.showMessageDialog(null, "Berhasil Simpan!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+           
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        tampil();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelClient;
+    private javax.swing.JTextField TxtAlamat;
+    private javax.swing.JTextField TxtEmail;
+    private javax.swing.JTextField TxtId_client;
+    private javax.swing.JTextField TxtNama_client;
+    private javax.swing.JTextField TxtNo_telepon;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -384,12 +482,6 @@ public class Client_Tabel_client extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JButton tblhapus;
     private javax.swing.JButton tblsimpan;
     private javax.swing.JButton tblubah;

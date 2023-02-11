@@ -28,6 +28,9 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
         initComponents();
         con = Accounting.connectDB();
         tampil();
+        combojenis();
+        combovendor();
+        combosatuan();
     }
 
     /**
@@ -49,7 +52,7 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        tblsimpan = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -61,16 +64,16 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         TxtNama_produk = new javax.swing.JTextField();
         combojenis = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        combosatuan = new javax.swing.JComboBox<>();
+        TxtTanggal = new javax.swing.JTextField();
+        TxtStok = new javax.swing.JTextField();
+        TxtHarga_beli = new javax.swing.JTextField();
+        TxtDeskripsi = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
+        tabelproduk = new javax.swing.JTable();
+        tblhapus = new javax.swing.JButton();
+        tblubah = new javax.swing.JButton();
+        TxtId_produk = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         combovendor = new javax.swing.JComboBox<>();
 
@@ -174,14 +177,19 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 0));
-        jButton8.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Simpan");
-        jButton8.setBorder(null);
-        jButton8.setMaximumSize(new java.awt.Dimension(85, 24));
-        jButton8.setMinimumSize(new java.awt.Dimension(85, 24));
-        jButton8.setPreferredSize(new java.awt.Dimension(85, 24));
+        tblsimpan.setBackground(new java.awt.Color(255, 0, 0));
+        tblsimpan.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblsimpan.setForeground(new java.awt.Color(255, 255, 255));
+        tblsimpan.setText("Simpan");
+        tblsimpan.setBorder(null);
+        tblsimpan.setMaximumSize(new java.awt.Dimension(85, 24));
+        tblsimpan.setMinimumSize(new java.awt.Dimension(85, 24));
+        tblsimpan.setPreferredSize(new java.awt.Dimension(85, 24));
+        tblsimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblsimpanActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("ID Produk           :");
 
@@ -208,15 +216,15 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
 
         combojenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combosatuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TxtTanggal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TxtTanggalActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelproduk.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -235,25 +243,40 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        tabelproduk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelprodukMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabelproduk);
 
-        jButton9.setBackground(new java.awt.Color(51, 204, 51));
-        jButton9.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Hapus");
-        jButton9.setBorder(null);
-        jButton9.setMaximumSize(new java.awt.Dimension(85, 24));
-        jButton9.setMinimumSize(new java.awt.Dimension(85, 24));
-        jButton9.setPreferredSize(new java.awt.Dimension(85, 24));
+        tblhapus.setBackground(new java.awt.Color(51, 204, 51));
+        tblhapus.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblhapus.setForeground(new java.awt.Color(255, 255, 255));
+        tblhapus.setText("Hapus");
+        tblhapus.setBorder(null);
+        tblhapus.setMaximumSize(new java.awt.Dimension(85, 24));
+        tblhapus.setMinimumSize(new java.awt.Dimension(85, 24));
+        tblhapus.setPreferredSize(new java.awt.Dimension(85, 24));
+        tblhapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblhapusActionPerformed(evt);
+            }
+        });
 
-        jButton10.setBackground(new java.awt.Color(255, 255, 0));
-        jButton10.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Ubah");
-        jButton10.setBorder(null);
-        jButton10.setMaximumSize(new java.awt.Dimension(85, 24));
-        jButton10.setMinimumSize(new java.awt.Dimension(85, 24));
-        jButton10.setPreferredSize(new java.awt.Dimension(85, 24));
+        tblubah.setBackground(new java.awt.Color(255, 255, 0));
+        tblubah.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblubah.setForeground(new java.awt.Color(255, 255, 255));
+        tblubah.setText("Ubah");
+        tblubah.setBorder(null);
+        tblubah.setMaximumSize(new java.awt.Dimension(85, 24));
+        tblubah.setMinimumSize(new java.awt.Dimension(85, 24));
+        tblubah.setPreferredSize(new java.awt.Dimension(85, 24));
+        tblubah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblubahActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("Nama Vendor      :");
 
@@ -290,16 +313,16 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                         .addGap(97, 97, 97)
                         .addComponent(jLabel10)
                         .addGap(8, 8, 8)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TxtId_produk, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(263, 263, 263)
@@ -310,8 +333,8 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtDeskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtHarga_beli, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,8 +342,8 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                             .addComponent(jLabel7))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TxtStok, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(combosatuan, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(45, 45, 45))
         );
         jPanel2Layout.setVerticalGroup(
@@ -335,14 +358,14 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TxtId_produk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel10)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(TxtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel4)
                                 .addComponent(TxtNama_produk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -357,22 +380,22 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
                                     .addComponent(jLabel12)
                                     .addComponent(combovendor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jCheckBox1)))
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel11))
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combosatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtHarga_beli, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtDeskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -395,9 +418,64 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TxtTanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTanggalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TxtTanggalActionPerformed
+
+    private void tabelprodukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelprodukMouseClicked
+        DefaultTableModel model = (DefaultTableModel)tabelproduk.getModel();
+        int selectedRowIndex = tabelproduk.getSelectedRow();
+
+        TxtId_produk.setText(model.getValueAt (selectedRowIndex, 0).toString());
+        TxtNama_produk.setText(model.getValueAt (selectedRowIndex, 1).toString());
+        TxtStok.setText(model.getValueAt (selectedRowIndex, 4).toString());
+        TxtHarga_beli.setText(model.getValueAt (selectedRowIndex, 6).toString());
+        TxtDeskripsi.setText(model.getValueAt (selectedRowIndex, 7).toString());
+        TxtTanggal.setText(model.getValueAt (selectedRowIndex, 8).toString());
+        
+    }//GEN-LAST:event_tabelprodukMouseClicked
+
+    private void tblubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblubahActionPerformed
+        try{
+            String value1= TxtId_produk.getText();
+            String value2= TxtNama_produk.getText();
+            String value3 = (combojenis).getSelectedItem().toString();
+            String value4 = (combovendor).getSelectedItem().toString();
+            String value5= TxtStok.getText();
+            String value6 = (combosatuan).getSelectedItem().toString();
+            String value7= TxtHarga_beli.getText();
+            String value8= TxtDeskripsi.getText();
+            String value9= TxtTanggal.getText();
+              
+            String update= "update Produk set Id_produk='"+value1+"', Nama_produk='"+value2+"',Jenis_produk='"+value3+"',Nama_vendor='"+value4+"',Stok='"+value5+"',Satuan_dasar='"+value6+"',Harga_beli='"+value7+"',Deskripsi='"+value8+"',Tanggal='"+value9+"' where Id_produk='"+value1+"'";
+            pst= con.prepareStatement(update);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Berhasil Update!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal diedit" +e.getMessage());
+          }
+          tampil();
+    }//GEN-LAST:event_tblubahActionPerformed
+
+    private void tblsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblsimpanActionPerformed
+        simpan();
+    }//GEN-LAST:event_tblsimpanActionPerformed
+
+    private void tblhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblhapusActionPerformed
+        try{
+            String value1= TxtId_produk.getText();
+            
+            String delete= "Delete from Produk where Id_produk='"+value1+"'";
+              pst= con.prepareStatement(delete);
+              pst.execute();
+              JOptionPane.showMessageDialog(null, "Berhasil dihapus!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal dihapus" +e.getMessage());
+          }
+          tampil(); 
+    }//GEN-LAST:event_tblhapusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -496,21 +574,146 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
             }
         });
     }
+    
+   public void tampil(){
+
+     DefaultTableModel tb = new DefaultTableModel();
+
+        tb.addColumn("Id");
+        tb.addColumn("Nama Produk");
+        tb.addColumn("Jenis Produk");
+        tb.addColumn("Nama Vendor");
+        tb.addColumn("Stok");
+        tb.addColumn("Satuan Dasar");
+        tb.addColumn("Harga Beli");
+        tb.addColumn("Deskripsi");
+        tb.addColumn("Tanggal");
+        tabelproduk.setModel(tb);
+
+
+        try{
+            String insert = ("Select * from Produk");
+            pst = con.prepareStatement(insert);
+            rs = pst.executeQuery();
+
+            while(rs.next()){
+                tb.addRow(new Object[]{
+                rs.getString("Id_produk"),
+                rs.getString("Nama_produk"),
+                rs.getString("Jenis_produk"),
+                rs.getString("Nama_vendor"),
+                rs.getString("Stok"),
+                rs.getString("Satuan_dasar"),
+                rs.getString("Harga_beli"),
+                rs.getString("Deskripsi"),
+                rs.getString("Tanggal"),
+                });
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+        }
+    }
+    public void simpan(){
+        try{
+           String insert = "INSERT INTO Produk (Nama_produk,Jenis_produk,Nama_vendor,Stok,Satuan_dasar,Harga_beli,Deskripsi,Tanggal) VALUES (?,?,?,?,?,?,?,?)";
+           String jenis = (combojenis).getSelectedItem().toString();
+           String vendor = (combovendor).getSelectedItem().toString();
+           String satuan = (combosatuan).getSelectedItem().toString();
+           
+           pst = con.prepareStatement(insert);         
+           pst.setString(1, TxtNama_produk.getText());
+           pst.setString(2, jenis);
+           pst.setString(3, vendor);
+           pst.setString(4, TxtStok.getText());
+           pst.setString(5, satuan);
+           pst.setString(6, TxtHarga_beli.getText());
+           pst.setString(7, TxtDeskripsi.getText());
+           pst.setString(8, TxtTanggal.getText());
+           pst.execute();
+           
+           JOptionPane.showMessageDialog(null, "Berhasil Simpan!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+           
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        tampil();
+    }
+    
+   private void combojenis() {
+    
+     try{
+            String sql ="SELECT * FROM JenisProduk ";
+            pst = con.prepareStatement(sql);     
+            rs = pst.executeQuery();
+            combojenis.removeAllItems();
+            while(rs.next()){
+                String data = rs.getString("Jenis_produk");
+                combojenis.addItem(data);  
+                combojenis.setSelectedItem("");
+                
+          }
+        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+              
+        }      
+   }  
+   private void combovendor() {
+    
+     try{
+            String sql ="SELECT * FROM Vendor ";
+            pst = con.prepareStatement(sql);     
+            rs = pst.executeQuery();
+            combovendor.removeAllItems();
+            while(rs.next()){
+                String data = rs.getString("Nama_vendor");
+                combovendor.addItem(data);  
+                combovendor.setSelectedItem("");
+                
+          }
+        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+              
+        }      
+   }  
+   private void combosatuan() {
+    
+     try{
+            String sql ="SELECT * FROM SatuanDasar ";
+            pst = con.prepareStatement(sql);     
+            rs = pst.executeQuery();
+            combosatuan.removeAllItems();
+            while(rs.next()){
+                String data = rs.getString("Satuan_dasar");
+                combosatuan.addItem(data);  
+                combosatuan.setSelectedItem("");
+                
+          }
+        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+              
+        }      
+   }  
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtDeskripsi;
+    private javax.swing.JTextField TxtHarga_beli;
+    private javax.swing.JTextField TxtId_produk;
     private javax.swing.JTextField TxtNama_produk;
+    private javax.swing.JTextField TxtStok;
+    private javax.swing.JTextField TxtTanggal;
     private javax.swing.JComboBox<String> combojenis;
+    private javax.swing.JComboBox<String> combosatuan;
     private javax.swing.JComboBox<String> combovendor;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -526,11 +729,9 @@ public class DataProduk_Tabel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable tabelproduk;
+    private javax.swing.JButton tblhapus;
+    private javax.swing.JButton tblsimpan;
+    private javax.swing.JButton tblubah;
     // End of variables declaration//GEN-END:variables
 }

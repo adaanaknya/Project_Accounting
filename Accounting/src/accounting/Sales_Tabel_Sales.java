@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,8 +25,10 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         initComponents();
         con = Accounting.connectDB();
         
-        combo();
+        combopajak();
         combojenis();
+        combosatuan();
+        combopembeli();
     }
 
     /**
@@ -46,9 +49,9 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        tblsimpan = new javax.swing.JButton();
+        tblhapus = new javax.swing.JButton();
+        tblubah = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -58,16 +61,16 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        TxtId_sales = new javax.swing.JTextField();
         combonamapembeli = new javax.swing.JComboBox<>();
         combonotelepon = new javax.swing.JComboBox<>();
         combonamaproduk = new javax.swing.JComboBox<>();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        TxtQuantity = new javax.swing.JTextField();
+        TxtHarga_jual = new javax.swing.JTextField();
+        TxtTanggal = new javax.swing.JTextField();
         combopajak = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelSales = new javax.swing.JTable();
         combojenis = new javax.swing.JComboBox<>();
         combosatuan = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
@@ -171,50 +174,50 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
-        jButton6.setBackground(new java.awt.Color(51, 204, 51));
-        jButton6.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Simpan");
-        jButton6.setBorder(null);
-        jButton6.setMaximumSize(new java.awt.Dimension(84, 25));
-        jButton6.setMinimumSize(new java.awt.Dimension(84, 25));
-        jButton6.setPreferredSize(new java.awt.Dimension(84, 25));
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblsimpan.setBackground(new java.awt.Color(51, 204, 51));
+        tblsimpan.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblsimpan.setForeground(new java.awt.Color(255, 255, 255));
+        tblsimpan.setText("Simpan");
+        tblsimpan.setBorder(null);
+        tblsimpan.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblsimpan.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblsimpan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton6MouseEntered(evt);
+                tblsimpanMouseEntered(evt);
             }
         });
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        tblsimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setBackground(new java.awt.Color(255, 0, 0));
-        jButton7.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Hapus");
-        jButton7.setBorder(null);
-        jButton7.setMaximumSize(new java.awt.Dimension(84, 25));
-        jButton7.setMinimumSize(new java.awt.Dimension(84, 25));
-        jButton7.setPreferredSize(new java.awt.Dimension(84, 25));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                tblsimpanActionPerformed(evt);
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(255, 255, 0));
-        jButton8.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Ubah");
-        jButton8.setBorder(null);
-        jButton8.setMaximumSize(new java.awt.Dimension(84, 25));
-        jButton8.setMinimumSize(new java.awt.Dimension(84, 25));
-        jButton8.setPreferredSize(new java.awt.Dimension(84, 25));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        tblhapus.setBackground(new java.awt.Color(255, 0, 0));
+        tblhapus.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblhapus.setForeground(new java.awt.Color(255, 255, 255));
+        tblhapus.setText("Hapus");
+        tblhapus.setBorder(null);
+        tblhapus.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblhapus.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblhapus.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblhapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                tblhapusActionPerformed(evt);
+            }
+        });
+
+        tblubah.setBackground(new java.awt.Color(255, 255, 0));
+        tblubah.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        tblubah.setForeground(new java.awt.Color(255, 255, 255));
+        tblubah.setText("Ubah");
+        tblubah.setBorder(null);
+        tblubah.setMaximumSize(new java.awt.Dimension(84, 25));
+        tblubah.setMinimumSize(new java.awt.Dimension(84, 25));
+        tblubah.setPreferredSize(new java.awt.Dimension(84, 25));
+        tblubah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblubahActionPerformed(evt);
             }
         });
 
@@ -236,25 +239,32 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
 
         jLabel12.setText("Pajak                 :");
 
-        combonamapembeli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combonamapembeli.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                combonamapembeliItemStateChanged(evt);
+            }
+        });
         combonamapembeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combonamapembeliActionPerformed(evt);
             }
         });
 
-        combonotelepon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         combonotelepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combonoteleponActionPerformed(evt);
             }
         });
 
-        combonamaproduk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combonamaproduk.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                combonamaprodukItemStateChanged(evt);
+            }
+        });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TxtTanggal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TxtTanggalActionPerformed(evt);
             }
         });
 
@@ -264,7 +274,7 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelSales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -283,9 +293,13 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        TabelSales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelSalesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TabelSales);
 
-        combojenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         combojenis.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 combojenisItemStateChanged(evt);
@@ -296,8 +310,6 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                 combojenisActionPerformed(evt);
             }
         });
-
-        combosatuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel13.setText("Satuan Dasar     :");
 
@@ -325,11 +337,11 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtId_sales, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(combonamapembeli, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(combonamaproduk, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtHarga_jual, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(combonotelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(combosatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(118, 118, 118)
@@ -340,16 +352,16 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                                             .addComponent(jLabel12))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TxtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(combopajak, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel14)))
                                         .addGap(26, 26, 26))
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(tblsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tblhapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tblubah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addComponent(combojenis, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -370,7 +382,7 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                                     .addComponent(jLabel9)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel2)
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(TxtId_sales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
@@ -396,23 +408,23 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(combosatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(124, 124, 124)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tblsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tblhapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tblubah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtHarga_jual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
@@ -431,17 +443,37 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void tblhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblhapusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_tblhapusActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void tblsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblsimpanActionPerformed
+        simpan();
+    }//GEN-LAST:event_tblsimpanActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void tblubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblubahActionPerformed
+        try{
+            String value1= TxtId_sales.getText();
+            String value2 = (combonamapembeli).getSelectedItem().toString();
+            String value3 = (combonotelepon).getSelectedItem().toString();
+            String value4 = (combojenis).getSelectedItem().toString();
+            String value5 = (combonamaproduk).getSelectedItem().toString();
+            String value6= TxtQuantity.getText();
+            String value7 = (combosatuan).getSelectedItem().toString();
+            String value8= TxtHarga_jual.getText();
+            String value9= TxtTanggal.getText();
+            String value10 = (combopajak).getSelectedItem().toString();
+              
+            String update= "update Sales set Id_sales='"+value1+"', Nama_pembeli='"+value2+"',No_Telepon='"+value3+"',Jenis_produk='"+value4+"',Nama_produk='"+value5+"',Quantity='"+value6+"',Satuan_dasar='"+value7+"',Harga_jual='"+value8+"',Tanggal='"+value9+"',Pajak='"+value10+"' where Id_sales='"+value1+"'";
+            pst= con.prepareStatement(update);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Berhasil Update!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+              
+          }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Data gagal diedit" +e.getMessage());
+          }
+          tampil();
+    }//GEN-LAST:event_tblubahActionPerformed
 
     private void combonamapembeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combonamapembeliActionPerformed
         // TODO add your handling code here:
@@ -455,13 +487,13 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_combopajakActionPerformed
 
-    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
+    private void tblsimpanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblsimpanMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6MouseEntered
+    }//GEN-LAST:event_tblsimpanMouseEntered
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TxtTanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTanggalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TxtTanggalActionPerformed
 
     private void combojenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combojenisActionPerformed
         // TODO add your handling code here:
@@ -483,6 +515,35 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_combojenisItemStateChanged
 
+    private void TabelSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelSalesMouseClicked
+        DefaultTableModel model = (DefaultTableModel)TabelSales.getModel();
+        int selectedRowIndex = TabelSales.getSelectedRow();
+        TxtId_sales.setText(model.getValueAt (selectedRowIndex, 0).toString());
+        TxtQuantity.setText(model.getValueAt (selectedRowIndex, 5).toString());
+        TxtHarga_jual.setText(model.getValueAt (selectedRowIndex, 7).toString());
+        TxtTanggal.setText(model.getValueAt (selectedRowIndex, 8).toString());    
+    }//GEN-LAST:event_TabelSalesMouseClicked
+
+    private void combonamapembeliItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_combonamapembeliItemStateChanged
+        try{
+
+            String sql ="select No_Telepon from Client where Nama_client='"+combonamapembeli.getSelectedItem()+"'";
+            pst = con.prepareStatement(sql);     
+            rs = pst.executeQuery();
+            combonotelepon.removeAllItems();
+            while(rs.next()){
+                combonotelepon.addItem(rs.getString("No_Telepon"));  
+          }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+              
+        }
+    }//GEN-LAST:event_combonamapembeliItemStateChanged
+
+    private void combonamaprodukItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_combonamaprodukItemStateChanged
+        
+    }//GEN-LAST:event_combonamaprodukItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -495,7 +556,7 @@ public class Sales_Tabel_Sales extends javax.swing.JFrame {
         });
     }
 
-   private void combo() {
+   private void combopajak() {
     
      try{
             String sql ="SELECT * FROM Pajak ";
@@ -533,9 +594,122 @@ private void combojenis(){
               
         }
     }
+private void combopembeli(){
+         
+        try{
+            String sql ="SELECT * FROM Client ";
+            pst = con.prepareStatement(sql);     
+            rs = pst.executeQuery();
+             combonamapembeli.removeAllItems();
+            while(rs.next()){
+                String data = rs.getString("Nama_client");
+                combonamapembeli.addItem(data);  
+                combonamapembeli.setSelectedItem("");      
+          }
+        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+              
+        }
+    }
+private void combosatuan(){
+         
+        try{
+            String sql ="SELECT * FROM SatuanDasar ";
+            pst = con.prepareStatement(sql);     
+            rs = pst.executeQuery();
+             combosatuan.removeAllItems();
+            while(rs.next()){
+                String data = rs.getString("Satuan_dasar");
+                combosatuan.addItem(data);  
+                combosatuan.setSelectedItem("");      
+          }
+        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+              
+        }
+    }
+
+
+
     
+public void tampil(){
+
+     DefaultTableModel tb = new DefaultTableModel();
+
+        tb.addColumn("Id");
+        tb.addColumn("Nama Pembeli");
+        tb.addColumn("No Telepon");
+        tb.addColumn("Jenis Produk");
+        tb.addColumn("Nama Produk");
+        tb.addColumn("Quantity");
+        tb.addColumn("Satuan Dasar");
+        tb.addColumn("Harga Jual");
+        tb.addColumn("Tanggal");
+        tb.addColumn("Pajak");
+        TabelSales.setModel(tb);
+
+
+        try{
+            String insert = ("Select * from Sales");
+            pst = con.prepareStatement(insert);
+            rs = pst.executeQuery();
+
+            while(rs.next()){
+                tb.addRow(new Object[]{
+                rs.getString("Id_sales"),
+                rs.getString("Nama_pembeli"),
+                rs.getString("No_Telepon"),
+                rs.getString("Jenis_produk"),
+                rs.getString("Nama_produk"),
+                rs.getString("Quantity"),
+                rs.getString("Satuan_dasar"),
+                rs.getString("Harga_jual"),
+                rs.getString("Tanggal"),
+                rs.getString("Pajak"),
+                });
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Data gagal tampil" +e.getMessage());
+        }
+    }
+    public void simpan(){
+        try{
+           String insert = "INSERT INTO Sales (Nama_pembeli, No_Telepon,Jenis_produk, Nama_produk, Quantity, Satuan_dasar, Harga_jual, Tanggal, Pajak) VALUES (?,?,?,?,?,?,?,?,?)";
+           String pembeli= (combonamapembeli).getSelectedItem().toString();
+           String notelepon= (combonotelepon).getSelectedItem().toString();
+           String jenis = (combojenis).getSelectedItem().toString();
+           String produk = (combonamaproduk).getSelectedItem().toString();
+           String satuan = (combosatuan).getSelectedItem().toString();
+           String pajak = (combopajak).getSelectedItem().toString();
+           
+           pst = con.prepareStatement(insert);         
+           pst.setString(1, pembeli);
+           pst.setString(2, notelepon);
+           pst.setString(3, jenis);
+           pst.setString(4, produk);
+           pst.setString(5, TxtQuantity.getText());
+           pst.setString(6, satuan);
+           pst.setString(7, TxtHarga_jual.getText());
+           pst.setString(8, TxtTanggal.getText());
+           pst.setString(9, pajak);
+           pst.execute();
+           
+           JOptionPane.showMessageDialog(null, "Berhasil Simpan!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+           
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        tampil();
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelSales;
+    private javax.swing.JTextField TxtHarga_jual;
+    private javax.swing.JTextField TxtId_sales;
+    private javax.swing.JTextField TxtQuantity;
+    private javax.swing.JTextField TxtTanggal;
     private javax.swing.JComboBox<String> combojenis;
     private javax.swing.JComboBox<String> combonamapembeli;
     private javax.swing.JComboBox<String> combonamaproduk;
@@ -547,9 +721,6 @@ private void combojenis(){
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -566,10 +737,8 @@ private void combojenis(){
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JButton tblhapus;
+    private javax.swing.JButton tblsimpan;
+    private javax.swing.JButton tblubah;
     // End of variables declaration//GEN-END:variables
 }

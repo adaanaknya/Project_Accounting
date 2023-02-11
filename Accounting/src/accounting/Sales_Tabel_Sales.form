@@ -189,11 +189,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField8" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="TxtId_sales" min="-2" pref="210" max="-2" attributes="0"/>
                                       <Component id="combonamapembeli" min="-2" pref="210" max="-2" attributes="0"/>
-                                      <Component id="jTextField5" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="TxtQuantity" min="-2" pref="210" max="-2" attributes="0"/>
                                       <Component id="combonamaproduk" min="-2" pref="210" max="-2" attributes="0"/>
-                                      <Component id="jTextField6" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="TxtHarga_jual" min="-2" pref="210" max="-2" attributes="0"/>
                                       <Component id="combonotelepon" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
                                       <Component id="combosatuan" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -206,7 +206,7 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField2" min="-2" pref="140" max="-2" attributes="0"/>
+                                              <Component id="TxtTanggal" min="-2" pref="140" max="-2" attributes="0"/>
                                               <Group type="102" attributes="0">
                                                   <Component id="combopajak" min="-2" pref="46" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -216,9 +216,9 @@
                                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jButton6" max="32767" attributes="0"/>
-                                          <Component id="jButton7" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tblsimpan" max="32767" attributes="0"/>
+                                          <Component id="tblhapus" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tblubah" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -248,7 +248,7 @@
                                       <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TxtId_sales" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -284,7 +284,7 @@
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
+                              <Component id="TxtQuantity" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -293,19 +293,19 @@
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtTanggal" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton6" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="tblsimpan" min="-2" pref="25" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                          <Component id="tblhapus" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                          <Component id="tblubah" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TxtHarga_jual" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="61" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="203" max="-2" attributes="0"/>
@@ -354,7 +354,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="tblsimpan">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="cc" red="33" type="rgb"/>
@@ -380,11 +380,11 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseEntered"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblsimpanMouseEntered"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblsimpanActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="tblhapus">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -410,10 +410,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblhapusActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="tblubah">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" red="ff" type="rgb"/>
@@ -439,7 +439,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblubahActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -487,20 +487,16 @@
             <Property name="text" type="java.lang.String" value="Pajak                 :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="TxtId_sales">
         </Component>
         <Component class="javax.swing.JComboBox" name="combonamapembeli">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="combonamapembeliItemStateChanged"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combonamapembeliActionPerformed"/>
           </Events>
           <AuxValues>
@@ -510,12 +506,7 @@
         <Component class="javax.swing.JComboBox" name="combonotelepon">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
@@ -528,25 +519,23 @@
         <Component class="javax.swing.JComboBox" name="combonamaproduk">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="combonamaprodukItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="TxtQuantity">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="TxtHarga_jual">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="TxtTanggal">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtTanggalActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="combopajak">
@@ -569,7 +558,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="TabelSales">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="11" rowCount="4">
@@ -649,18 +638,16 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TabelSalesMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JComboBox" name="combojenis">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
@@ -674,12 +661,7 @@
         <Component class="javax.swing.JComboBox" name="combosatuan">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
